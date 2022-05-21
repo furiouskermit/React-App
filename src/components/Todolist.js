@@ -1,9 +1,7 @@
-import Button from "./Button";
-import styles from "./App.module.css"
+import styles from "../App.module.css"
 import { useState, useEffect } from "react"
-import { func } from "prop-types";
 
-function App() {
+function Todolist() {
   const [toDo, setToDo] = useState("")
   const [toDos, setToDos] = useState([])
   const onChange = (event) => setToDo(event.target.value)
@@ -36,4 +34,4 @@ function App() {
   </div>
 }
 
-export default App;
+export default Todolist;
