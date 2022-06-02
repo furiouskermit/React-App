@@ -19,10 +19,19 @@ function Home() {
   useEffect(() => {
     getMovies();
   }, [])
-  console.log(movies)
+  //console.log(movies)
   return <div>
     {loading ? <h1>Loading...</h1> : 
-      <div>{movies.map((movie) => (<Movie key={movie.id} coverImg={movie.medium_cover_image} title={movie.title} summary={movie.summary} genre={movie.genre} />)
+      <div>{movies.map((movie) => (
+        <Movie 
+          key={movie.id}
+          id={movie.id} 
+          coverImg={movie.medium_cover_image} 
+          title={movie.title} 
+          summary={movie.summary} 
+          genre={movie.genre} 
+        />
+      )
       //property로 보내줘야 Movie.js가 받음
       )}</div>
     }

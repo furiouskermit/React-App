@@ -12,7 +12,7 @@ function App() {
   //Switch : Route를 찾고 찾으면 그것을 component로 만드는 역할
   return <Router>
     <Routes>
-      <Route path="/movie" element={<Detail />}></Route>
+      <Route path="/movie/:id" element={<Detail />}></Route>
       <Route path="/" element={<Home />}></Route>
     </Routes>
   </Router>;
