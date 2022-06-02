@@ -2,7 +2,6 @@ import {useState} from "react";
 import {useParams} from "react-router-dom";
 import { useEffect } from "react";
 import styles from "../App.module.css"
-import '../App.scoped.scss'
 
 function Detail() {
   const [loading2, setLoading2] = useState(true);
@@ -22,18 +21,20 @@ function Detail() {
   console.log(detail)
   return <div>
     {loading2 ? <div>Loading...</div> : 
-      <div className={styles.btnWrap}>
-        <div><img src={detail.large_cover_image} /></div>
-        <h1 className={styles.title}>{detail.title}</h1>
-        <ul>
-          <li>Rating: <strong>{detail.rating}</strong></li>
-          <li>Runtime: <strong>{detail.runtime}min</strong></li>
-          <li>Released: <strong>{detail.year}</strong></li>
-          <li>Genre: 
-            <strong>{detail.genres && detail.genres.map(detailG => <span key={detailG}>{detailG}. </span>)}</strong>
-          </li>
-          <li>Likes: <strong>{detail.like_count}</strong></li>
-        </ul>
+      <div className={styles.detailWrap}>
+        <div className={styles.detailContent}>
+          <h1 className={styles.detailTitle}>{detail.title}</h1>
+          <div><img src={detail.large_cover_image} className={styles.detailImg} /></div>
+          <ul className={styles.detailDesc}>
+            <li className={styles.detailItem}>Rating: <strong>{detail.rating}</strong></li>
+            <li className={styles.detailItem}>Runtime: <strong>{detail.runtime}min</strong></li>
+            <li className={styles.detailItem}>Released: <strong>{detail.year}</strong></li>
+            <li className={styles.detailItem}>Genre: 
+              <strong>{detail.genres && detail.genres.map(detailG => <span key={detailG}>{detailG}. </span>)}</strong>
+            </li>
+            <li className={styles.detailItem}>Likes: <strong>{detail.like_count}</strong></li>
+          </ul>
+        </div>
       </div>
     }
   </div>

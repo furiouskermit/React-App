@@ -44,9 +44,36 @@ ul {
   border: 1px solid #eee;
 }
 
-.btnWrap {
+.detailWrap {
   height: 100vh;
   background: rgb(23, 25, 32);
-  color: #fff;
+  color: #dedede;
   overflow: hidden;
+  position: relative;
+}
+.detailContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.detailTitle {
+  text-align: center;
+  color: #fff;
+  font-size: 42px;
+}
+.detailImg {
+  border-radius: 40px;
+}
+.detailDesc {
+  margin: 20px 0 0;
+  font-size: 22px;
+}
+.detailItem {
+  line-height: 1.5em;
+}
+.detailItem strong {
+  margin-left: 5px;
+  color: #fff;
+  font-weight: 600;
 }
