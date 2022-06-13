@@ -12,8 +12,8 @@ function App() {
   //Switch : Route를 찾고 찾으면 그것을 component로 만드는 역할
   return <Router>
     <Routes>
-      <Route path="/movie/:id" element={<Detail />}></Route>
-      <Route path="/" element={<Home />}></Route>
+      <Route path={process.env.PUBLIC_URL + "/movie/:id"} element={<Detail />}></Route>
+      <Route path={process.env.PUBLIC_URL + "/"} element={<Home />}></Route>
     </Routes>
   </Router>;
 }

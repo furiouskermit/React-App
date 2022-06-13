@@ -27,6 +27,11 @@ ul {
 img {
   object-fit: cover;
 }
+input, button, select, textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
 
 /* scrollbar */
 ::-webkit-scrollbar {
@@ -38,6 +43,11 @@ img {
   background-color: rgb(180, 216, 253);
   height: 150px;
   border-radius: 20px;
+}
+
+/* display */
+.dNone {
+  display: none;
 }
 
 /* flex */
@@ -71,11 +81,74 @@ img {
 /* Header */
 .header {
   border-bottom: 1px solid #eee;
+  position: relative;
+  overflow: hidden;
 }
 .headerTitle {
   text-align: center;
   font-weight: 700;
-  text-transform: uppercase;
+}
+.trigger {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 14px;
+  width: 20px;
+  height: 15px;
+}
+.trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007aff;
+}
+.trigger span:nth-child(1) {
+  top: 0;
+}
+.trigger span:nth-child(2) {
+  top: 50%;
+}
+.trigger span:nth-child(3) {
+  top: 100%;
+}
+[class *= "headerMenu"] {
+  position: fixed;
+  top: 0;
+  width: 70%;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 10px 0 20px rgba(0,0,0,0.05);
+  z-index: 1000;
+  transition: 0.35s;
+}
+.headerMenu {
+  left: -100%;
+}
+.headerMenuActive {
+  left: 0;
+}
+.btnClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 28px;
+  color: rgb(143, 197, 250);
+  cursor: pointer;
+}
+.welcomeText,
+.headerUl {
+  padding: 0 20px;
+}
+.welcomeText {
+  background-color: #007aff;
+  font-weight: 600;
+  font-size: 30px;
+  color: #fff;
+}
+.headerUl a {
+  font-weight: 500;
+  font-size: 24px;
 }
 
 /* Contents */
